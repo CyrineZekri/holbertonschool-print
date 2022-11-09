@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 			_putchar(*(format + i));
 			l++;
 		}
-		else if (*(format + i) == '%')
+		else
 		{
 			if (format[i + 1] == 'c')
 			{
