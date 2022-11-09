@@ -13,9 +13,10 @@ int _printf(const char *format, ...)
 	n = strlen(format);
 	for (i = 0; i < n; i++)
 	{
-		if (format = (NULL))
+		if (*format == '\0')
 		{
 			_putchar('\0');
+			continue;
 		}
 		else if (*(format + i) != '%')
 		{
@@ -30,12 +31,18 @@ int _printf(const char *format, ...)
 				l++;
 				i = i + 1;
 			}
+			if (format[i + 1] == '%')
+			{
+				_putchar('%');
+				l++;
+				i = i + 1;
+			}
 			else if (*(format + i + 1) == 's')
 			{
 				l = l + print_string(liste);
 				i = i + 1;
 			}
-			else 
+			else
 			{
 				_putchar('%');
 				l++;
