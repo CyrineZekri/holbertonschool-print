@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 				l++;
 				i = i + 1;
 			}
-			if (format[i + 1] == '\0')
+			if (*(format + i) == '%' && format[i + 1] == '\0')
 			{
 				l = -1;
 				i = i + 1;
