@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 		if (*format == '\0')
 		{
 			_putchar('\0');
-			break;
+			continue;
 		}
 		else if (*(format + i) != '%')
 		{
