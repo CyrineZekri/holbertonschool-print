@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 	int l = 0, i, n;
 
 	va_start(liste, format);
+
 	n = strlen(format);
 
 	for (i = 0; i < n; i++)
@@ -45,8 +46,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				_putchar('%');
-				l++;
-			}
+				}
 		}
 	}
 
