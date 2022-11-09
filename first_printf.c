@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 			_putchar('\0');
 			continue;
 		}
-		else if (*(format + i) != '%')
+		if (*(format + i) != '%')
 		{
 			_putchar(*(format + i));
 			l++;
