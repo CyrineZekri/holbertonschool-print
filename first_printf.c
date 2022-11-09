@@ -43,12 +43,7 @@ int _printf(const char *format, ...)
 				l = l + print_string(liste);
 				i = i + 1;
 			}
-			else
-			{
-				_putchar('%');
-				l++;
-			}
-		}
+				}
 	}
 
 	va_end(liste);
