@@ -26,10 +26,14 @@ int _printf(const char *format, ...)
 				l++;
 				i = i + 1;
 			}
-			if (*(format + i + 1) == 's')
+			else if (*(format + i + 1) == 's')
 			{
 				l = l + print_string(liste);
 				i = i + 1;
+			}
+			else 
+			{
+				_putchar('%');
 			}
 		}
 	}
