@@ -31,12 +31,6 @@ int _printf(const char *format, ...)
 				l++;
 				i = i + 1;
 			}
-			if (format[i + 1] == '%')
-			{
-				_putchar('%');
-				l++;
-				i = i + 1;
-			}
 			else if (*(format + i + 1) == 's')
 			{
 				l = l + print_string(liste);
