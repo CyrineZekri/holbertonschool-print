@@ -6,18 +6,16 @@
  */
 int _printf(const char *format, ...)
 {
+
 	va_list liste;
 	int l = 0, i, n;
 
 	va_start(liste, format);
 	n = strlen(format);
+
 	for (i = 0; i < n; i++)
 	{
-		if (*format == '\0')
-		{
-			_putchar('\0');
-			continue;
-		}
+
 		if (*(format + i) != '%')
 		{
 			_putchar(*(format + i));
@@ -49,6 +47,7 @@ int _printf(const char *format, ...)
 			}
 		}
 	}
+
 	va_end(liste);
 	return (l);
 }
