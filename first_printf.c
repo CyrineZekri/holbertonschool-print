@@ -29,6 +29,12 @@ int _printf(const char *format, ...)
 				l++;
 				i = i + 1;
 			}
+			else if (format[i + 1] == '\0')
+			{
+
+				l--;
+				i = i + 1;
+			}
 
 			else if (format[i + 1] == '%')
 			{
