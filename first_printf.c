@@ -11,56 +11,53 @@ int _printf(const char *format, ...)
 
 	va_start(liste, format);
 	n = strlen(format);
-	if (format != NULL)
+	if (*format == 0)
 	{
-		for (i = 0; i < n; i++)
-		{
+		return(0);
+	}
+	for (i = 0; i < n; i++)
+	{
 
-			if (*(format + i) != '%')
+		if (*(format + i) != '%')
+		{
+			_putchar(*(format + i));
+			l++;
+		}
+		else
+		{
+			if (format[i + 1] == 'c')
 			{
-				_putchar(*(format + i));
+				print_char(liste);
 				l++;
+				i = i + 1;
+			}
+			else if (format[i + 1] == '\0')
+			{
+
+				l--;
+				i = i + 1;
+			}
+
+			else if (format[i + 1] == '%')
+			{
+				_putchar('%');
+				l++;
+				i = i + 1;
+			}
+
+			else if (*(format + i + 1) == 's')
+			{
+				l = l + print_string(liste);
+				i = i + 1;
 			}
 			else
 			{
-				if (format[i + 1] == 'c')
-				{
-					print_char(liste);
-					l++;
-					i = i + 1;
-				}
-				else if (format[i + 1] == '\0')
-				{
-
-					l--;
-					i = i + 1;
-				}
-
-				else if (format[i + 1] == '%')
-				{
-					_putchar('%');
-					l++;
-					i = i + 1;
-				}
-
-				else if (*(format + i + 1) == 's')
-				{
-					l = l + print_string(liste);
-					i = i + 1;
-				}
-				else
-				{
-					_putchar('%');
-					l++;
-				}
+				_putchar('%');
+				l++;
 			}
 		}
 	}
-	else
-	{
-		l = 0;
-		return(l);
-	}
+
 	va_end(liste);
 	return (l);
 }
