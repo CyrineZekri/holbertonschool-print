@@ -10,9 +10,11 @@ int _printf(const char *format, ...)
 	int i, n, l = 0;
 
 	va_start(liste, format);
-
 	n = strlen(format);
-
+	if (*format == NULL)
+	{
+		return(0);
+	}
 	for (i = 0; i < n; i++)
 	{
 
