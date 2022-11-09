@@ -6,9 +6,8 @@
  */
 int _printf(const char *format, ...)
 {
-
 	va_list liste;
-	int l = 0, i, n;
+	int i, n, l = 0;
 
 	va_start(liste, format);
 
@@ -28,6 +27,11 @@ int _printf(const char *format, ...)
 			{
 				print_char(liste);
 				l++;
+				i = i + 1;
+			}
+			if (format[i + 1] == '\0')
+			{
+				l = -1;
 				i = i + 1;
 			}
 
