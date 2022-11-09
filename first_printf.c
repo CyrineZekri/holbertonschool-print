@@ -13,9 +13,9 @@ int _printf(const char *format, ...)
 	n = strlen(format);
 	for (i = 0; i < n; i++)
 	{
-		if (format = NULL)
+		if (format = (NULL))
 		{
-			_putchar(NULL);
+			_putchar('\0');
 		}
 		else if (*(format + i) != '%')
 		{
