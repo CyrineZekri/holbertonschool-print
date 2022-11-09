@@ -2,7 +2,7 @@
 /**
  *_printf -prints characters and strings.
  *@format:input var
- *Return:int.
+ *Return:aint.
  */
 int _printf(const char *format, ...)
 {
