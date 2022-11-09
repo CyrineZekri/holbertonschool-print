@@ -13,7 +13,11 @@ int _printf(const char *format, ...)
 	n = strlen(format);
 	for (i = 0; i < n; i++)
 	{
-		if (*(format + i) != '%')
+		if (format = NULL)
+		{
+			_putchar(NULL);
+		}
+		else if (*(format + i) != '%')
 		{
 			_putchar(*(format + i));
 			l++;
