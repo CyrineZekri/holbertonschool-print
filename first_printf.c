@@ -2,7 +2,7 @@
 /**
  *_printf -prints characters and strings.
  *@format:input var
- *Return:aint.
+ *Return:an int.
  */
 int _printf(const char *format, ...)
 {
@@ -52,11 +52,10 @@ int _printf(const char *format, ...)
 				}
 				else if (*(format + i + 1) == 'd' || *(format + i + 1) == 'i')
 				{
-					
 				}
 			}
 		}
 	}
-		va_end(liste);
-		return (l);
-	}
+	va_end(liste);
+	return (l);
+}
