@@ -10,11 +10,9 @@ int _printf(const char *format, ...)
 	int i, n, l = 0;
 
 	va_start(liste, format);
-
-	n = strlen(format);
-
-	for (i = 0; i < n; i++)
+	if (format == NULL)
 	{
+<<<<<<< HEAD
 
 		if (*(format + i) != '%')
 		{
@@ -23,40 +21,56 @@ int _printf(const char *format, ...)
 		}
 
 		else
+=======
+		return (-1);
+	}
+	else
+	{
+		n = strlen(format);
+		for (i = 0; i < n; i++)
+>>>>>>> refs/remotes/origin/main
 		{
-			if (format[i + 1] == 'c')
+
+			if (*(format + i) != '%')
 			{
-				print_char(liste);
+				_putchar(*(format + i));
 				l++;
-				i = i + 1;
-			}
-			else if (format[i + 1] == '\0')
-			{
-
-				l--;
-				i = i + 1;
-			}
-
-			else if (format[i + 1] == '%')
-			{
-				_putchar('%');
-				l++;
-				i = i + 1;
-			}
-
-			else if (*(format + i + 1) == 's')
-			{
-				l = l + print_string(liste);
-				i = i + 1;
 			}
 			else
 			{
-				_putchar('%');
-				l++;
+				if (format[i + 1] == 'c')
+				{
+					print_char(liste);
+					l++;
+					i = i + 1;
+				}
+				else if (format[i + 1] == '\0')
+				{
+
+					l--;
+					i = i + 1;
+				}
+
+				else if (format[i + 1] == '%')
+				{
+					_putchar('%');
+					l++;
+					i = i + 1;
+				}
+
+				else if (*(format + i + 1) == 's')
+				{
+					l = l + print_string(liste);
+					i = i + 1;
+				}
+				else
+				{
+					_putchar('%');
+					l++;
+				}
 			}
 		}
 	}
-
-	va_end(liste);
-	return (l);
-}
+		va_end(liste);
+		return (l);
+	}
