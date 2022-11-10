@@ -12,25 +12,13 @@ int _printf(const char *format, ...)
 	va_start(liste, format);
 	if (format == NULL)
 	{
-<<<<<<< HEAD
-
-		if (*(format + i) != '%')
-		{
-			_putchar(*(format + i));
-			l++;
-		}
-
-		else
-=======
 		return (-1);
 	}
 	else
 	{
 		n = strlen(format);
 		for (i = 0; i < n; i++)
->>>>>>> refs/remotes/origin/main
 		{
-
 			if (*(format + i) != '%')
 			{
 				_putchar(*(format + i));
@@ -57,16 +45,14 @@ int _printf(const char *format, ...)
 					l++;
 					i = i + 1;
 				}
-
 				else if (*(format + i + 1) == 's')
 				{
 					l = l + print_string(liste);
 					i = i + 1;
 				}
-				else
+				else if (*(format + i + 1) == 'd' || *(format + i + 1) == 'i')
 				{
-					_putchar('%');
-					l++;
+					
 				}
 			}
 		}
