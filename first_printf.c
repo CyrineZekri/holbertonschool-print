@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*(format + i) == '%')
 			{
-				l = l + process_function(liste, format, i);
+				l = l + process_function(liste, format, i, 0);
 				i = i + 1;
 			}
 		}
