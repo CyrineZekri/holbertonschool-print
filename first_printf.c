@@ -2,16 +2,16 @@
 /**
  *_printf -prints characters and strings.
  *@format:input var
- *Return:an int.
+ *Return:an integer.
  */
 int _printf(const char *format, ...)
 {
 	va_list liste;
 	int i, n, l = 0;
-
 	va_start(liste, format);
 	if (format == NULL)
 	{
+		return (l);
 		return (-1);
 	}
 	else
@@ -34,11 +34,9 @@ int _printf(const char *format, ...)
 				}
 				else if (format[i + 1] == '\0')
 				{
-
 					l--;
 					i = i + 1;
 				}
-
 				else if (format[i + 1] == '%')
 				{
 					_putchar('%');
@@ -50,7 +48,12 @@ int _printf(const char *format, ...)
 					l = l + print_string(liste);
 					i = i + 1;
 				}
-						}
+				else
+				{
+					_putchar('%');
+					l++;
+				}
+			}
 		}
 	}
 	va_end(liste);
