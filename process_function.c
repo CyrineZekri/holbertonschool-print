@@ -5,7 +5,7 @@
  *@format: the format given as input
  *@i: counter
  *@f: the length adder
- *Return: returns the value 
+ *Return: returns the value
  */
 int process_function(va_list list, const char *format, int i, int f)
 {
