@@ -25,5 +25,11 @@ int process_function(va_list list, const char* format, int i)
     {
         f = f + print_string(list);
     }
+    else
+    {
+        _putchar(*(format + i));
+        _putchar(*(format + i + 1));
+        f = f + 2;
+    }
     return (f);
 }
