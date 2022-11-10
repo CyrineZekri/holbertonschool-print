@@ -50,10 +50,7 @@ int _printf(const char *format, ...)
 					l = l + print_string(liste);
 					i = i + 1;
 				}
-				else if (*(format + i + 1) == 'd' || *(format + i + 1) == 'i')
-				{
-				}
-			}
+						}
 		}
 	}
 	va_end(liste);
