@@ -2,6 +2,7 @@
 /**
  *print_string - the function to print a whole string
  *@p: the list of arguments of printf
+ *Return: returns the length of the printed string
  */
 int print_string(va_list p)
 {
