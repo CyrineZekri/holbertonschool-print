@@ -7,7 +7,7 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int process_function(va_list list, const char* format, int i, int l);
+int process_function(va_list list, const char* format, int i);
 void print_char(va_list p);
 int print_string(va_list p);
 #endif
