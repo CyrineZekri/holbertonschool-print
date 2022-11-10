@@ -24,9 +24,9 @@ int _printf(const char *format, ...)
 				_putchar(*(format + i));
 				l++;
 			}
-			else
+			else if (*(format + i) == '%')
 			{
-				l = l + process_function(liste, format, i, l);
+				l = l + process_function(liste, format, i);
 				i = i + 1;
 			}
 		}
