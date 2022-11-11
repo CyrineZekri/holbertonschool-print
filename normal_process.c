@@ -23,7 +23,7 @@ int normal_process(const char* format, int l,va_list liste)
 			}
 			else if (*(format + i + 1) == 'd' || *(format + i + 1) == 'i')
 			{
-				l = l + printing_numbers(liste);
+				l = l + printing_number(liste);
 				i = i + 1;
 			}
 		}
