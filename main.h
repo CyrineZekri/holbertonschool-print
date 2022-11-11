@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+#include <limits.h>
 int _printf(const char *format, ...);
 int _putchar(char c);
 int normal_process(const char* format, int l,va_list liste);
