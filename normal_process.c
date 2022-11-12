@@ -21,10 +21,16 @@ int normal_process(const char *format, int l, va_list liste)
 				l = l + process_function(liste, format, i, 0);
 				i = i + 1;
 			}
+
 			else if (*(format + i + 1) == 'd' || *(format + i + 1) == 'i')
 			{
 				l = l + printing_number(liste);
 				i = i + 1;
+			}
+			else
+			{
+				_putchar(*(format + i));
+				l++;
 			}
 		}
 	}
