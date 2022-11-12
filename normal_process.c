@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *normal_process - the normal process.
+ *normal_process - the normal process to all .
  *
  */
 int normal_process(const char *format, int l, va_list liste)
